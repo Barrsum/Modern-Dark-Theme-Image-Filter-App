@@ -1,0 +1,27 @@
+/* src/AppLayout.css */
+
+.main-content-area {
+    display: flex;
+    flex-direction: column; /* Mobile first: stack controls above viewport */
+    width: 100%;
+    gap: 25px; /* Increased gap for better separation */
+    flex-grow: 1; /* Allow this area to grow and fill space */
+    margin-top: 20px; /* Space below header */
+  }
+  
+  /* Apply side-by-side layout on tablets and larger */
+  @media (min-width: 768px) {
+    .main-content-area {
+      flex-direction: row; /* Place controls and viewport side-by-side */
+      align-items: flex-start; /* Align items to the top */
+    }
+  
+  }
+  
+  @media (min-width: 1200px) {
+     .main-content-area {
+         gap: 30px; /* Even more space on large screens */
+     }
+  }
+
+  /* Created by Ram Bapat, www.linkedin.com/in/ram-bapat-barrsum-diamos */

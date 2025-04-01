@@ -1,0 +1,279 @@
+/* src/components/Controls.css */
+
+/* --- Basic Layout and Sticky Behavior --- */
+.controls-sidebar {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 320px;
+    height: fit-content;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0, 0.08);
+  }
+  
+  .controls-sticky-content {
+      position: sticky;
+      top: 85px; /* Adjust based on header height + desired gap */
+      max-height: calc(100vh - 110px); /* Prevent overflowing viewport */
+      overflow-y: auto; /* Add scroll if content exceeds max height */
+      padding-right: 10px; /* Space for scrollbar */
+      margin-right: -10px; /* Counteract padding for layout */
+  }
+  
+  /* --- Scrollbar Styling (within controls) --- */
+  .controls-sticky-content::-webkit-scrollbar { width: 6px; }
+  .controls-sticky-content::-webkit-scrollbar-track { background: transparent; }
+  .controls-sticky-content::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 3px; }
+  html.dark .controls-sticky-content::-webkit-scrollbar-thumb { background-color: var(--border-color); }
+  
+  /* --- General Control Group Styling --- */
+  .controls-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .control-group {
+    margin-bottom: 30px;
+  }
+  .control-group:last-child {
+    margin-bottom: 10px;
+  }
+  
+  .control-group h3 {
+    font-size: 1.15rem;
+    color: var(--primary-color);
+    margin-bottom: 0; /* Moved spacing to header/container */
+    padding-bottom: 0;
+    border-bottom: none; /* Moved border to header */
+  }
+  
+  /* --- Upload Button Styling --- */
+  .upload-group { /* Specific styling for upload if needed */ }
+  
+  .file-upload-label {
+    display: block;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+  }
+  
+  .file-upload-label:hover {
+    background-color: var(--button-hover-bg);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .no-image-notice {
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+  
+  /* --- Filters Section Header & Toggle --- */
+  .filters-group { /* Container for filters */ }
+  
+  .filters-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px; /* Space below header before controls */
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border-color);
+  }
+  
+  .filters-header h3 { /* Style for the "Filters" title itself */
+      font-size: 1.15rem;
+      color: var(--primary-color);
+  }
+  
+  .view-toggle-button {
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      box-shadow: none;
+      font-weight: 500;
+      border-radius: 5px; /* Match other button radius */
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .view-toggle-button:hover {
+      background-color: var(--primary-color);
+      color: var(--button-text);
+      border-color: var(--primary-color);
+  }
+  
+  html.dark .view-toggle-button {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+  }
+  html.dark .view-toggle-button:hover {
+      background-color: var(--primary-color);
+      color: var(--button-text); /* Ensure text is readable on dark theme */
+  }
+  
+  /* --- Sliders Container & Individual Controls --- */
+  .sliders-container {
+      /* Add specific container styles if needed */
+  }
+  
+  .filter-control {
+    margin-bottom: 18px;
+  }
+  
+  .filter-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-color);
+  }
+  
+  .slider-value {
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-color);
+    opacity: 0.9;
+    background-color: rgba(128, 128, 128, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    min-width: 50px;
+    text-align: right;
+  }
+  
+  .filter-slider {
+    width: 100%;
+    cursor: pointer;
+    height: 6px;
+    background: var(--slider-track-color);
+    border-radius: 3px;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    transition: opacity 0.2s;
+  }
+  .filter-slider:hover { opacity: 0.9; }
+  
+  /* Slider Thumb Styles (Cross-browser) */
+  .filter-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 18px; height: 18px;
+    background: var(--slider-thumb-color);
+    border-radius: 50%; cursor: pointer;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease;
+  }
+  .filter-slider:active::-webkit-slider-thumb { background-color: var(--button-hover-bg); }
+  
+  .filter-slider::-moz-range-thumb {
+    width: 18px; height: 18px;
+    background: var(--slider-thumb-color);
+    border-radius: 50%; cursor: pointer;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease;
+  }
+  .filter-slider:active::-moz-range-thumb { background-color: var(--button-hover-bg); }
+  
+  /* --- Presets Container & Buttons --- */
+  .presets-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive columns */
+      gap: 10px;
+      margin-top: 10px; /* Align visually with sliders */
+  }
+  
+  .preset-button {
+      padding: 10px 5px;
+      font-size: 0.9rem;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      width: 100%;
+      margin: 0; /* Override default button margin */
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+      border-radius: 5px; /* Match other buttons */
+      cursor: pointer;
+  }
+  
+  .preset-button:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      transform: translateY(-1px);
+  }
+  
+  .preset-button:active { transform: translateY(0px); }
+  
+  html.dark .preset-button {
+      background-color: var(--secondary-color);
+      border-color: var(--border-color);
+  }
+  html.dark .preset-button:hover {
+      background-color: var(--border-color);
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+  }
+  
+  /* --- Utilities Section --- */
+  .utilities-group { /* Container for utilities */ }
+  
+  .utilities-group button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .utilities-group button:last-child {
+      margin-bottom: 0;
+  }
+  
+  /* --- Button Color Modifiers --- */
+  .button-danger { background-color: #dc3545; border-color: #dc3545; color: #fff; }
+  .button-danger:hover { background-color: #c82333; border-color: #bd2130; }
+  .button-success { background-color: #28a745; border-color: #28a745; color: #fff; }
+  .button-success:hover { background-color: #218838; border-color: #1e7e34; }
+  
+  html.dark .button-danger { background-color: #e65a69; color: #121212; }
+  html.dark .button-danger:hover { background-color: #dc3545; }
+  html.dark .button-success { background-color: #51c16d; color: #121212; }
+  html.dark .button-success:hover { background-color: #28a745; }
+  
+  /* --- Screen Reader Only Class --- */
+  .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+  }
+
+  /* Created by Ram Bapat, www.linkedin.com/in/ram-bapat-barrsum-diamos */

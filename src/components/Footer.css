@@ -1,0 +1,47 @@
+/* src/components/Footer.css */
+.app-footer {
+    width: 100%;
+    padding: 20px 25px;
+    margin-top: auto; /* Pushes footer to the bottom in flex container */
+    background-color: var(--secondary-color);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 10px; /* Space between footer elements */
+  }
+  
+  .app-footer p {
+      margin: 0;
+      opacity: 0.8;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 20px; /* Space between icons */
+    margin: 5px 0; /* Add some vertical margin around icons */
+  }
+  
+  .social-links a {
+    color: var(--text-color); /* Use text color for icons */
+    font-size: 1.5rem; /* Make icons larger */
+    transition: color 0.2s ease, transform 0.2s ease;
+    opacity: 0.7;
+  }
+  
+  .social-links a:hover {
+    color: var(--primary-color); /* Highlight with primary color on hover */
+    opacity: 1;
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+  }
+  
+  .connect-text {
+      font-size: 0.8rem; /* Smaller text for "Connect above" */
+      font-style: italic;
+      opacity: 0.6;
+  }
+
+  /* Created by Ram Bapat, www.linkedin.com/in/ram-bapat-barrsum-diamos */

@@ -1,0 +1,59 @@
+/* src/components/Header.css */
+.app-header {
+    width: 100%;
+    padding: 15px 25px;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure header stays on top */
+  }
+  
+  .app-title { /* Changed from h1 to specific class */
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .theme-toggle-button {
+    padding: 8px 15px;
+    font-size: 0.95rem;
+    background-color: transparent; /* Make theme toggle subtle */
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    box-shadow: none;
+  }
+  
+  .theme-toggle-button:hover {
+    background-color: var(--border-color); /* Use border color for subtle hover */
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  /* Responsive adjustments for header */
+  @media (max-width: 650px) {
+    .app-header {
+      padding: 12px 15px;
+      flex-direction: column;
+      align-items: center; /* Center items when stacked */
+      gap: 10px; /* Add gap when stacked */
+    }
+  
+    .app-title {
+      font-size: 1.4rem;
+      text-align: center;
+    }
+  
+    .theme-toggle-button {
+        width: 100%; /* Make button full width on small screens */
+        max-width: 200px; /* But not too wide */
+    }
+  }
+
+
+  /* Created by Ram Bapat, www.linkedin.com/in/ram-bapat-barrsum-diamos */
