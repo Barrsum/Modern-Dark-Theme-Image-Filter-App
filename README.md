@@ -1,6 +1,6 @@
 # Modern Dark-Theme Image Filter App (React) ✨🎨
 
-## Try live demo - [Demo](YOUR_VERCEL_DEPLOYMENT_URL_HERE)
+## Try live demo - [Demo]([YOUR_VERCEL_DEPLOYMENT_URL_HERE](https://modern-dark-theme-image-filter-app.vercel.app/))
 
 A sleek, modern image filtering application built with React and Vite. Features include live previews, adjustable filter sliders, curated presets, dark/light theme toggling, and the ability to save your creations.
 
