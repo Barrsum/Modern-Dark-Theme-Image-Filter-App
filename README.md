@@ -68,9 +68,8 @@ To get a local copy up and running, follow these simple steps.
     ```
 
 2.  **Navigate to the project directory:**
-    *(Replace with your actual repository name)*
     ```bash
-    cd YOUR_REPOSITORY_NAME
+    cd Modern-Dark-Theme-Image-Filter-App
     ```
 
 3.  **Install NPM packages:**
